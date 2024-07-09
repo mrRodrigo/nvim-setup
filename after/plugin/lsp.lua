@@ -15,7 +15,6 @@ require('mason-lspconfig').setup({
 		  require('lspconfig')[server_name].setup({})
 	  end,
   },
-		
 })
 
 -- keymaps
