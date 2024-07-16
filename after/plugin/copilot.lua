@@ -22,9 +22,9 @@ require('copilot').setup({
     keymap = {
       accept = "<M-l>",
       accept_word = false,
-      accept_line = "<tab>",
+      accept_line = "<C-q>",
       next = "<M-]>",
-      prev = "<M-[>",
+	  prev = "<M-[>",
       dismiss = "<C-]>",
     },
   },

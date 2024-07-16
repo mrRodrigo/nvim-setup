@@ -1,20 +1,20 @@
 local lazypath = vim.fn.stdpath "data" .. "/lazy/lazy.nvim"
 
- if not vim.loop.fs_stat(lazypath) then
-  vim.fn.system {
-    "git",
-    "clone",
-    "--filter=blob:none",
-    "https://github.com/folke/lazy.nvim.git",
-    "--branch=stable",
-    lazypath,
-  }
+if not vim.loop.fs_stat(lazypath) then
+	vim.fn.system {
+		"git",
+		"clone",
+		"--filter=blob:none",
+		"https://github.com/folke/lazy.nvim.git",
+		"--branch=stable",
+		lazypath,
+	}
 end
-
 
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
+	{ 'molecule-man/telescope-menufacture' },
 	{
 		"zbirenbaum/copilot.lua",
 		cmd = "Copilot",
@@ -25,7 +25,6 @@ require("lazy").setup({
 	},
 	{
 		'nvim-telescope/telescope.nvim', tag = '0.1.6',
-		-- or                              , branch = '0.1.x',
 		dependencies = { 'nvim-lua/plenary.nvim' }
 	},
 	{
@@ -66,8 +65,6 @@ require("lazy").setup({
 		'windwp/nvim-autopairs',
 		event = "InsertEnter",
 		config = true
-		-- use opts = {} for passing setup options
-		-- this is equalent to setup({}) function
 	},
 	{
 		"mfussenegger/nvim-dap",
@@ -79,45 +76,6 @@ require("lazy").setup({
 			version = '1.x',
 			build = 'npm i && npm run compile vsDebugServerBundle && mv dist out',
 		},
-		config = function()
-			local dap = require 'dap'
-			--local utils = require 'dap.utils'
-			local dap_js = require 'dap-vscode-js'
-			--local mason = require 'mason-registry'
-
-			---@diagnostic disable-next-line: missing-fields
-			dap_js.setup {
-				-- debugger_path = mason.get_package('js-debug-adapter'):get_install_path(),
-				debugger_path = vim.fn.stdpath 'data' .. '/lazy/vscode-js-debug',
-				adapters = { 'pwa-node', 'pwa-chrome', 'pwa-msedge', 'node-terminal', 'pwa-extensionHost' },
-			}
-
-			local langs = { 'javascript', 'typescript' }
-			for _, lang in ipairs(langs) do
-				dap.configurations[lang] = {
-					{
-						type    = 'pwa-node',
-						request = 'attach',
-						name    = 'Attach debugger to existing `node --inspect` process',
-						cwd     = '${workspaceFolder}',
-						skipFiles = {
-							'${workspaceFolder}/node_modules/**/*.js',
-							'${workspaceFolder}/packages/**/node_modules/**/*.js',
-							'${workspaceFolder}/packages/**/**/node_modules/**/*.js',
-							'<node_internals>/**',
-							'node_modules/**',
-						},
-						localRoot = '${workspaceFolder}',
-						sourceMaps = true,
-						resolveSourceMapLocations = {
-							'${workspaceFolder}/**',
-							'!**/node_modules/**',
-						},
-						remoteRoot = "/app"
-					},
-				}
-			end
-		end,
 	},
 	{
 		"rcarriga/nvim-dap-ui",
