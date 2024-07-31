@@ -39,3 +39,5 @@
 [nvim-dap-vscode-js](https://github.com/mxsdev/nvim-dap-vscode-js)
 
 [nvim-dap-ui](https://github.com/rcarriga/nvim-dap-ui)
+
+[kawre/leetcode.nvim](https://github.com/kawre/leetcode.nvim)
