@@ -36,22 +36,36 @@ for _, lang in ipairs(langs) do
 			resolveSourceMapLocations = {
 				'${workspaceFolder}/**',
 				'!**/node_modules/**',
-			},
-			remoteRoot = "/app"
-		},
-		{
-			type    = 'pwa-node',
-			request = 'attach',
-			name    = 'Attach debugger to LOCAL JS `node --inspect` process',
-			cwd     = '${workspaceFolder}',
-			skipFiles = {
-				'${workspaceFolder}/node_modules/**/*.js',
-				'${workspaceFolder}/packages/**/node_modules/**/*.js',
-				'${workspaceFolder}/packages/**/**/node_modules/**/*.js',
-				'<node_internals>/**',
-				'node_modules/**',
-			},
-		}
+            },
+            remoteRoot = "/app"
+        },
+        {
+            type    = 'pwa-node',
+            request = 'attach',
+            name    = 'Attach debugger to LOCAL JS `node --inspect` process',
+            cwd     = '${workspaceFolder}',
+            skipFiles = {
+                '${workspaceFolder}/node_modules/**/*.js',
+                '${workspaceFolder}/packages/**/node_modules/**/*.js',
+                '${workspaceFolder}/packages/**/**/node_modules/**/*.js',
+                '<node_internals>/**',
+                'node_modules/**',
+            },
+        },
+        {
+            type    = 'pwa-node',
+            request = 'attach',
+            name    = 'Attach debugger to LEGACY LOCAL JS `node --debug` process',
+            cwd     = '${workspaceFolder}',
+            skipFiles = {
+                '${workspaceFolder}/node_modules/**/*.js',
+                '${workspaceFolder}/packages/**/node_modules/**/*.js',
+                '${workspaceFolder}/packages/**/**/node_modules/**/*.js',
+                '<node_internals>/**',
+                'node_modules/**',
+            },
+        }
+
 	}
 end
 
