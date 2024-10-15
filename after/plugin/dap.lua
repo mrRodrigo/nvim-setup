@@ -55,6 +55,7 @@ for _, lang in ipairs(langs) do
         {
             type    = 'pwa-node',
             request = 'attach',
+            port    = 5858,
             name    = 'Attach debugger to LEGACY LOCAL JS `node --debug` process',
             cwd     = '${workspaceFolder}',
             skipFiles = {

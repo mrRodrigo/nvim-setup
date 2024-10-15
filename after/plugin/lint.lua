@@ -1,28 +1,28 @@
-local null_ls = require("null-ls")
-local eslint = require("eslint")
+local lint = require "lint"
 
-null_ls.setup()
+lint.linters_by_ft = {
+  typescript = { "eslint" },
+  javascript = { "eslint" },
+  -- typescriptreact = { "eslint", "biomejs" },
+  -- javascriptreact = { "eslint", "biomejs" },
+  -- go = { "golangcilint" },
+}
 
-eslint.setup({
-  bin = 'eslint', -- or `eslint_d`
-  code_actions = {
-    enable = true,
-    apply_on_save = {
-      enable = true,
-      types = { "directive", "problem", "suggestion", "layout" },
-    },
-    disable_rule_comment = {
-      enable = true,
-      location = "separate_line", -- or `same_line`
-    },
-  },
-  diagnostics = {
-    enable = true,
-    report_unused_disable_directives = false,
-    run_on = "type", -- or `save`
-  },
+local eslint = lint.linters.eslint_d
+
+eslint.args = {
+  "--no-warn-ignored",
+  "--format",
+  "json",
+  "--stdin",
+  "--stdin-filename",
+  function()
+    return vim.api.nvim_buf_get_name(0)
+  end,
+}
+
+vim.api.nvim_create_autocmd({ "BufWritePost", "BufEnter", "InsertLeave" }, {
+  callback = function()
+    lint.try_lint()
+  end,
 })
-
-
-
-
