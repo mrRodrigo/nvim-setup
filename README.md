@@ -1,5 +1,9 @@
+
 npm i -g eslint_d
-npm i -g jsonlint
+
+npm i -g eslint
+
+npm i -g @prantlf/jsonlint
 
 
 
