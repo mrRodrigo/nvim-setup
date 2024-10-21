@@ -3,6 +3,7 @@ local lint = require "lint"
 lint.linters_by_ft = {
   typescript = { "eslint" },
   javascript = { "eslint" },
+  json = { "jsonlint" },
   -- typescriptreact = { "eslint", "biomejs" },
   -- javascriptreact = { "eslint", "biomejs" },
   -- go = { "golangcilint" },
