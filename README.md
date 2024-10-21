@@ -1,3 +1,14 @@
+
+npm i -g eslint_d
+
+npm i -g eslint
+
+npm i -g @prantlf/jsonlint
+
+
+
+
+
 [telescope-menufacture](https://github.com/molecule-man/telescope-menufacture)
 
 [copilot.lua](https://github.com/zbirenbaum/copilot.lua)
