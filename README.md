@@ -1,13 +1,15 @@
+### install formaters
+`npm i -g eslint_d`
 
-npm i -g eslint_d
+`npm i -g eslint`
 
-npm i -g eslint
-
-npm i -g @prantlf/jsonlint
-
-
+`npm i -g @prantlf/jsonlin`
 
 
+### install (win32)
+`winget install nmap (gdscript)`
+
+`scoop install gcc (https://github.com/nvim-treesitter/nvim-treesitter/wiki/Windows-support)`
 
 [telescope-menufacture](https://github.com/molecule-man/telescope-menufacture)
 
@@ -50,3 +52,17 @@ npm i -g @prantlf/jsonlint
 [nvim-dap-vscode-js](https://github.com/mxsdev/nvim-dap-vscode-js)
 
 [nvim-dap-ui](https://github.com/rcarriga/nvim-dap-ui)
+
+[vim-tmux-navigator](https:github.com/hristoomey/vim-tmux-navigator)
+
+[vim-visual-multi](https:github.com/g979/vim-visual-multi)
+
+[nvim-lint](https:github.com/fussenegger/nvim-lint)
+
+[conform.nvim](https:github.com/tevearc/conform.nvim)
+
+[vim-godot](https:github.com/abamax/vim-godot)
+
+### GODOT EXTERNAL
+
+ --server 127.0.0.1:6004 --remote-send  "<esc>:n {file}<CR>"
