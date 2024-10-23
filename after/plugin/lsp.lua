@@ -18,6 +18,14 @@ require('mason-lspconfig').setup({
   },
 })
 
+
+-- godot lsp config
+if vim.fn.has 'win32' == 1 then
+  require('lspconfig').gdscript.setup({
+    cmd = { 'ncat', 'localhost', os.getenv('GDScript_Port') or '6005' }
+  })
+end
+
 -- keymaps
 
 local cmp = require('cmp')

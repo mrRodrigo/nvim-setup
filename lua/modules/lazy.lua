@@ -115,5 +115,6 @@ require("lazy").setup({
   },
   { 'mg979/vim-visual-multi' },
   { 'mfussenegger/nvim-lint' },
-  { 'stevearc/conform.nvim' }
+  { 'stevearc/conform.nvim' },
+  { 'habamax/vim-godot',     event = "VimEnter" }
 })

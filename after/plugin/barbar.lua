@@ -1,9 +1,12 @@
 require('barbar').setup {
-	animation = false,
-	sidebar_filetypes = {
-    	-- Use the default values: {event = 'BufWinLeave', text = '', align = 'left'}
-    	NvimTree = true,
-	}
+  animation = false,
+  sidebar_filetypes = {
+    -- Use the default values: {event = 'BufWinLeave', text = '', align = 'left'}
+    NvimTree = true,
+  },
+
+  insert_at_end = true,
+  insert_at_start = false,
 }
 
 
@@ -24,7 +27,7 @@ map('n', '<leader>5', '<Cmd>BufferGoto 5<CR>', opts)
 map('n', '<leader>6', '<Cmd>BufferGoto 6<CR>', opts)
 map('n', '<leader>7', '<Cmd>BufferGoto 7<CR>', opts)
 map('n', '<leader>8', '<Cmd>BufferGoto 8<CR>', opts)
-map('n', '<leader>9', '<Cmd>BufferGoto 9<CR>', opts) 
+map('n', '<leader>9', '<Cmd>BufferGoto 9<CR>', opts)
 
 -- Re-order to previous/next
 map('n', '<leader><', '<Cmd>BufferMovePrevious<CR>', opts)
