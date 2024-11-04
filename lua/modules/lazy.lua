@@ -113,7 +113,13 @@ require("lazy").setup({
       { "<c-\\>", "<cmd><C-U>TmuxNavigatePrevious<cr>" },
     },
   },
-  { 'mg979/vim-visual-multi' },
+  {
+    'mg979/vim-visual-multi',
+    config = function()
+      vim.keymap.set("n", "<C-J>", "<Plug>(VM-Select-Cursor-Down)")
+      vim.keymap.set("n", "<C-K>", "<Plug>(VM-Select-Cursor-Up)")
+    end
+  },
   { 'mfussenegger/nvim-lint' },
   { 'stevearc/conform.nvim' },
   { 'habamax/vim-godot',     event = "VimEnter" }
