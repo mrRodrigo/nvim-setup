@@ -28,6 +28,7 @@
   "telescope-menufacture": { "branch": "main", "commit": "8c547e82a703fe90c7f69af04d0b4e47a59cc971" },
   "telescope.nvim": { "branch": "master", "commit": "c392f1b78eaaf870ca584bd698e78076ed301b26" },
   "vim-godot": { "branch": "master", "commit": "d21e110ee09b5030e55adda660a4ff58db40a329" },
+  "vim-smoothie": { "branch": "master", "commit": "df1e324e9f3395c630c1c523d0555a01d2eb1b7e" },
   "vim-tmux-navigator": { "branch": "master", "commit": "5b3c701686fb4e6629c100ed32e827edf8dad01e" },
   "vim-visual-multi": { "branch": "master", "commit": "a6975e7c1ee157615bbc80fc25e4392f71c344d4" },
   "vscode-js-debug": { "branch": "main", "commit": "1d104b5184736677ab5cc280c70bbd227403850c" }

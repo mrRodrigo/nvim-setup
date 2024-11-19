@@ -122,5 +122,6 @@ require("lazy").setup({
   },
   { 'mfussenegger/nvim-lint' },
   { 'stevearc/conform.nvim' },
-  { 'habamax/vim-godot',     event = "VimEnter" }
+  { 'habamax/vim-godot',     event = "VimEnter" },
+  { 'psliwka/vim-smoothie' }
 })
