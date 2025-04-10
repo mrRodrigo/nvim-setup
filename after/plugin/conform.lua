@@ -14,7 +14,7 @@ local options = {
     },
   },
   formatters_by_ft = {
-    --javascript = ,
+    javascript = { "prettier", "eslint_d" },
     typescript = { "tsserver", "prettier", "eslint_d" },
     --  go = { "goimports-reviser", "gofumpt" },
     lua = { "stylua" },

@@ -33,6 +33,28 @@ local cmp_action = require('lsp-zero').cmp_action()
 
 
 --vim.api.nvim_create_autocmd("BufWritePre", { callback = function() vim.lsp.buf.format() end })
+-- `/` cmdline setup.
+cmp.setup.cmdline('/', {
+  mapping = cmp.mapping.preset.cmdline(),
+  sources = {
+    { name = 'buffer' }
+  }
+})
+-- `:` cmdline setup.
+cmp.setup.cmdline(':', {
+  mapping = cmp.mapping.preset.cmdline(),
+  sources = cmp.config.sources({
+    { name = 'path' }
+  }, {
+    {
+      name = 'cmdline',
+      option = {
+        ignore_cmds = { 'Man', '!' }
+      }
+    }
+  })
+})
+
 
 cmp.setup({
   mapping = cmp.mapping.preset.insert({
